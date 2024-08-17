@@ -1,0 +1,13 @@
+from pprint import pprint
+import requests
+
+url = "https://sandboxdnac.cisco.com/dna/intent/api/v1/network-device"
+
+headers = {'x-auth-token': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Njk3NzQwYWU4ZTc5NDc0ZjcxN2FiNWEiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjY2OTZmMDFhYTA0Y2FlNjVjM2MzN2IwMiJdLCJ0ZW5hbnRJZCI6IjY2OTZmMDE4YTA0Y2FlNjVjM2MzN2FmYiIsImV4cCI6MTcyMzM2NzgxNSwiaWF0IjoxNzIzMzY0MjE1LCJqdGkiOiJkOTAyOTYzNi03OTJjLTRlMDItYTdiZC01NDYwNzMyNDBlMDIiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.rOJqqIjbaO7FFdzM36aSQfrCL4YpCw23a7GtKTp4r1nwnrBeUNVwumPcUM2eqxsKr2nRQpXrBDCKn6SZTud4h_ACsCqEf05uH2KKzMFt0HEqGvGipaY_IopAVgwAJPqfr3Ux4sk3bs63imhHZbj-dywmuWHwYbR2L4SJlCpYdB-trC_--Ea7wCfQjP7aBXDvoUDqol7O-9usVTum4le74o39p2he-0grPlZWllrUUu3AnNDygisSLTRTtgxxGAyNpukgFmcMyz-N76k98_2MZFZxN1Sn7HFPKBW6nponZfiDCz3iiePG9NOUj4TcwwA1m6fTQ7bDAHkYRKPtpprWLw' ,'content-type':'application/json'}
+
+res = requests.get(url=url, headers=headers, verify=False)
+
+ 
+data = res.json() if res.status_code == 200 else None
+
+pprint(data)
